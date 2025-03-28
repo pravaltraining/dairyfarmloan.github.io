@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+.dashboard-container .header-container{
+    height: 100px;
+}
+.dashboard-container .content-container ,.loan-reports{
+    height: calc(100vh - 100px) !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+body{
+    overflow: hidden;
+}
+
+.bg-theme{
+    background-color: #0F72B1;
+}
+.text-theme{
+    color: #0F72B1;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.side-bar .side-bar-links{
+    font-weight: 500;
+}
+.side-bar-links li{
+    cursor: pointer;
+    list-style: none;
+}
+.side-bar-links .active{
+    background-color:#3f8ec1;
+    border-radius: 10px;
+}
+
+.side-bar-links li:hover{
+    background-color:#3f8ec1;
+    border-radius: 10px;
+}
+
+.kpi-cards .col-2{
+    width: 15% !important;
+}
+.kpi-cards .card {
+    box-shadow: 1px 1px 3px 1px #c3c3c3;
+}
+.kpi-cards .card p{
+   margin-top: 0.75rem;
+   margin-bottom: 0.5rem;
+}
+.kpi-cards .card h2{
+    color: #0F72B1;
+}
+.kpi-cards .card:hover{
+    cursor: pointer;
+}
+
+.kpi-cards .active {
+    background-color: #3f8ec1;
+    color: white !important;
+}
+
+.kpi-cards .active h2{
+    color: white !important;
+}
+
+.loan-status{
+    color: white !important;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: 500;
+    border-radius: 15px;
+    width: 70% !important;
+
+}
+
+.approved{
+    background-color:#49ac49 !important;
+}
+
+.rejected{
+    background-color: #f26262 !important;
+}
+
+.pending{
+    background-color: #F29339 !important;
+} 
+.circle{
+    height:5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color:  white;
+}
+
+.table-container {
+    height: 55vh;
+    overflow: auto;
+}
+
+.box-shadow{
+    box-shadow: 1px 1px 3px 1px #c3c3c3;
+}
+
+.logo-container img{
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+
