@@ -1,6 +1,6 @@
 function generateLoanRecords(count = 50) {
     const loanTypes = ["Dairy Loan", "Personal Loan", "Home Loan", "Auto Loan"];
-    const status = [
+    const loanstatus = [
         { status: "Approved", class: "approved" },
         { status: "Rejected", class: "rejected" },
         { status: "In Progress", class: "pending" },
@@ -15,14 +15,14 @@ function generateLoanRecords(count = 50) {
         const customerName = `Customer ${i}`;
         const loanType = loanTypes[Math.floor(Math.random() * loanTypes.length)];
         const mobileNumber = `+91 8096****${String(i % 10).padStart(2, '0')}`;
-        const status = status[Math.floor(Math.random() * status.length)];
+        const status = loanstatus[Math.floor(Math.random() * loanstatus.length)];
         
         records.push({
             loanRefId,
             customerName,
             loanType,
             mobileNumber,
-            status: { text: status.status, class: status.class },
+            status: { text: loanstatus.status, class:loanstatus.class },
             viewIcon: `<i class='bi bi-eye-fill cursor-pointer' onClick="openProfile('${loanRefId}')"></i>`
         });
     }
