@@ -15,14 +15,14 @@ function generateLoanRecords(count = 50) {
         const customerName = `Customer ${i}`;
         const loanType = loanTypes[Math.floor(Math.random() * loanTypes.length)];
         const mobileNumber = `+91 8096****${String(i % 10).padStart(2, '0')}`;
-        const status = status[Math.floor(Math.random() * status.length)];
-        
+        const selectedStatus = loanstatus[Math.floor(Math.random() * loanstatus.length)];
+
         records.push({
             loanRefId,
             customerName,
             loanType,
             mobileNumber,
-            status: { text: loanstatus.status, class: loanstatus.class },
+            status: { text: selectedStatus.status, class: selectedStatus.class },
             viewIcon: `<i class='bi bi-eye-fill cursor-pointer' onClick="openProfile('${loanRefId}')"></i>`
         });
     }
