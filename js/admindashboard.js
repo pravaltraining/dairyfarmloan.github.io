@@ -15,7 +15,7 @@ function generateLoanRecords(count = 50) {
         const customerName = `Customer ${i}`;
         const loanType = loanTypes[Math.floor(Math.random() * loanTypes.length)];
         const mobileNumber = `+91 8096****${String(i % 10).padStart(2, '0')}`;
-        const status = loanstatus[Math.floor(Math.random() * loanstatus.length)];
+        const status = status[Math.floor(Math.random() * status.length)];
         
         records.push({
             loanRefId,
