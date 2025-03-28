@@ -106,7 +106,7 @@ function getLoanTypeOptions(records){
     let options =  [...new Set(records.map(item => item.loanType))];
     options.unshift('All');
     options?.map((option)=>{
-        select +=`<option value="${option}">${option}</option>`
+        select +=`<option class="cursor-pointer" value="${option}">${option}</option>`
     })
     select+='</select>'
 
