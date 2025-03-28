@@ -22,7 +22,7 @@ function generateLoanRecords(count = 50) {
             customerName,
             loanType,
             mobileNumber,
-            status: { text: loanstatus.status, class:loanstatus.class },
+            status: { text: loanstatus.status, class: loanstatus.class },
             viewIcon: `<i class='bi bi-eye-fill cursor-pointer' onClick="openProfile('${loanRefId}')"></i>`
         });
     }
