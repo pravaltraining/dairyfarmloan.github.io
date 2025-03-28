@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admindashboard.css">
+    <script src="js/admindashboard.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.3.1/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-PDUiPu3vDllMfrUHnurV430Qg8chPZTNhY8RUpq89lq22R3PzypXQifBpcpE1eoB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container d-flex flex-column">
+     <div class="header-container row bg-theme">
+        <div class="col-2">
+          <div class="logo-container ps-5 mt-2">
+            <a href="admindashboard.html" class="cursor-pointer"><img src="Images/logo.png" alt=""></a>
+          </div>
+        </div>
+        <div class="col-2 d-flex flex-column justify-content-end text-right">
+          <div class="fw-bold fs-4 text-white">
+            Hello
+          </div>
+          <div class="fw-bold fs-2 text-white">
+            Peter Parker
+          </div>
+        </div>
+      
+      </div>
+      <!-- <div class=""> -->
+        <div class="row m-0">
+          <div class="side-bar content-container pb-0 col-2 bg-theme d-flex flex-column justify-content-between">
+            <ul class="text-white side-bar-links ps-0 mx-auto">
+              <li class="p-2 m-2 active mt-4">
+                Loan Origination and Approval
+              </li>
+              <li class="p-2 m-2">
+                Repayment Management
+              </li>
+              <li class="p-2 m-2">
+                Post-Approval Disturbement
+              </li>
+              <li class="p-2 m-2">
+                Loan Utiliaztion Status
+              </li>
+            </ul>
+            <ul class="text-white side-bar-links ps-0 mt-auto">
+              <li class="p-2 m-2 mt-auto" onclick="logOut()">
+                Log out
+              </li>
+            </ul>
+          </div>
+          <div class="loan-reports  col-10" >
+              <div class="kpi-cards p-4">
+                <div class="row   justify-content-between ">
+                  <div class="card col-2" id="all" onclick="filterLoanRecords('all')"> 
+                    <p class="fw-bold">Total Applicants</p>
+                    <h2>
+                      50
+                    </h2>
+                  </div>
+                  <div class="card col-2" id="kyc" onclick="filterLoanRecords('kyc')">
+                    <p class="fw-bold">KYC</p>
+                    <h2 >
+                      10
+                    </h2>
+                  </div>
+                  <div class="card col-2" id="inprogress" onclick="filterLoanRecords('inprogress')">
+                    <p class="fw-bold">In Progress</p>
+                    <h2>
+                      07
+                    </h2>
+                  </div>
+                  <div class="card col-2" id="documentrequest" onclick="filterLoanRecords('documentrequest')">
+                    <p class="fw-bold">Document Request</p>
+                    <h2>
+                      13
+                    </h2>
+                  </div>
+                  <div class="card col-2" id="approved" onclick="filterLoanRecords('approved')">
+                    <p class="fw-bold">Approved</p>
+                    <h2>
+                      11
+                    </h2>
+                  </div>
+                  <div class="card col-2" id="rejected" onclick="filterLoanRecords('rejected')">
+                    <p class="fw-bold">Rejected</p>
+                    <h2>
+                      09
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="filters-containers d-flex justify-content-end  align-items-center p-3">
+                <div class="fw-bold pe-4">
+                  Loan Types
+                </div>
+                <div class="loantype-filter col-2" id="loantypes">
+
+                </div>
+              </div>
+              <div class="table-container ps-4 py-0 "id="loanrecords">  
+                    <thead>
+                        <tr >
+                            <th scope="col">Loan Ref Id</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Loan Type</th>
+                            <th scope="col">Mobile Number</th>
+                            <th scope="col">Status</th>
+                            <th class="text-center" scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">DFL0001</th>
+                            <td>Rajesh Kumar</td>
+                            <td>Dairy Loan</td>
+                            <td>+91 8096****81</td>
+                            <td >
+                              <span class="loan-status approved">
+                                Approved
+                              </span>
+                            </td>
+                            <td class="text-center"><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">DFL0002</th>
+                            <td>Amit Sharma</td>
+                            <td>Dairy Loan</td>
+                            <td>+91 8096****82</td>
+                            <td >
+                              <span class="loan-status approved">
+                                Approved
+                              </span>
+                            </td>
+                            <td><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PFL0001</th>
+                            <td>Sneha Reddy</td>
+                            <td>Personal Loan</td>
+                            <td>+91 8096****83</td>
+                            <td >
+                              <span class="loan-status bg-primary">
+                                Kyc Completed
+                              </span>
+                            </td>
+                            <td><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PFL0002</th>
+                            <td>Vikram Patel</td>
+                            <td>Personal Loan</td>
+                            <td>+91 8096****84</td>
+                            <td >
+                              <span class="loan-status bg-secondary">
+                                Document Request
+                              </span>
+                            </td>
+                            <td><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">DFL0003</th>
+                            <td>Priya Mehta</td>
+                            <td>Dairy Loan</td>
+                            <td>+91 8096****85</td>
+                            <td >
+                              <span class="loan-status rejected">
+                                Rejected
+                              </span>
+                            </td>
+                            <td><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PFL0003</th>
+                            <td>Rohan Verma</td>
+                            <td>Personal Loan</td>
+                            <td>+91 8096****86</td>
+                            <td >
+                              <span class="loan-status pending">
+                                In Progress
+                              </span>
+                            </td>
+                            <td><i class="bi bi-eye-fill"></i></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">PFL0004</th>
+                          <td>Krishna Kumar</td>
+                          <td>Personal Loan</td>
+                          <td>+91 8096****86</td>
+                          <td >
+                            <span class="loan-status approved">
+                              Approved
+                            </span>
+                          </td>
+                          <td><i class="bi bi-eye-fill"></i></td>
+                      </tr>
+                    </tbody>
+                  </table> -->
+              </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.3.1/dist/js/coreui.bundle.min.js" integrity="sha384-8QmUFX1sl4cMveCP2+H1tyZlShMi1LeZCJJxTZeXDxOwQexlDdRLQ3O9L78gwBbe" crossorigin="anonymous"></script>
+
+</body>
+</html>
